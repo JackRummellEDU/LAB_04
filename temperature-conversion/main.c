@@ -4,16 +4,6 @@
 #include <ctype.h>
 
 
-// Requirements
-// - handle errors
-//   - invalid temperature
-//   - invalid conversion (kelvin to kelvin)
-//   - displays error messages
-// - input validation
-//   - edge cases
-//   - negative kelvin values
-
-
 
 // Required functions
 float celsius_to_fahrenheit(float celsius){ return 9*celsius/5 + 32; }
@@ -47,9 +37,6 @@ int validate_temp(float celsius)
     
     return 1;
 }
-// Gets input from the user,
-// validates temperature,
-// ensures it's stored in celsius
 float get_temp(char scale)
 {
     int isInputValid;
@@ -94,10 +81,10 @@ char get_scale()
         input = getchar();
         clear_input_buffer();
 
-        // Normalize scale
+        // Normalize input
         input = tolower(input);
 
-        // Validate scale
+        // Validate
         if(input != 'c' && input != 'f' && input != 'k'){
             printf("Error: Input is invalid, please try again\n");
             isInputValid = 0;
